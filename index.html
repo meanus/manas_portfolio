@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My 2000s Portfolio</title>
+  <style>
+    body {
+      background-color: #99CCFF;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      margin: 0;
+      padding: 0;
+      color: #000080;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 25h2v2h-2z M50 25h2v2h-2z M75 25h2v2h-2z M25 50h2v2h-2z M50 50h2v2h-2z M75 50h2v2h-2z M25 75h2v2h-2z M50 75h2v2h-2z M75 75h2v2h-2z' fill='%23ffffff' fill-opacity='0.4'/%3E%3C/svg%3E");
+    }
+    
+    #container {
+      width: 800px;
+      margin: 0 auto;
+      border: 5px solid #FF00FF;
+      background-color: #FFFFFF;
+    }
+    
+    #header {
+      background-color: #000080;
+      color: #FFFF00;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 3px solid #FF00FF;
+    }
+    
+    #header h1 {
+      font-size: 36px;
+      text-shadow: 2px 2px #FF0000;
+      margin: 0;
+    }
+    
+    #header marquee {
+      font-weight: bold;
+      color: #00FF00;
+    }
+    
+    #navbar {
+      background-color: #000000;
+      text-align: center;
+      padding: 5px;
+    }
+    
+    .navbutton {
+      background-color: #CCCCCC;
+      color: #000000;
+      border: 2px outset #FFFFFF;
+      margin: 0 5px;
+      padding: 3px 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .navbutton:hover {
+      background-color: #FFFF00;
+    }
+    
+    .navbutton:active {
+      border-style: inset;
+    }
+    
+    #content {
+      display: flex;
+    }
+    
+    #sidebar {
+      width: 200px;
+      background-color: #CCCCFF;
+      padding: 10px;
+      border-right: 2px dashed #FF00FF;
+    }
+    
+    #sidebar h3 {
+      text-align: center;
+      color: #FF0000;
+      text-decoration: underline;
+    }
+    
+    #sidebar ul {
+      list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%23ff0000'/%3E%3C/svg%3E");
+      padding-left: 25px;
+    }
+    
+    #sidebar li {
+      margin-bottom: 5px;
+    }
+    
+    #main {
+      padding: 15px;
+      flex-grow: 1;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+      border: 1px solid #CCCCCC;
+      padding: 10px;
+      background-color: #FFFFCC;
+    }
+    
+    .section h2 {
+      color: #FF0000;
+      text-align: center;
+      border-bottom: 1px dashed #0000FF;
+      padding-bottom: 5px;
+    }
+    
+    .project {
+      display: flex;
+      margin-bottom: 15px;
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+      padding: 5px;
+    }
+    
+    .project-image {
+      width: 100px;
+      height: 100px;
+      background-color: #CCCCCC;
+      border: 2px solid #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+    }
+    
+    .blink {
+      animation: blinker 1s linear infinite;
+    }
+    
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+    
+    .counter {
+      text-align: center;
+      font-weight: bold;
+      color: #FF0000;
+      margin-top: 10px;
+    }
+    
+    #footer {
+      background-color: #000080;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      border-top: 3px solid #FF00FF;
+    }
+    
+    #footer a {
+      color: #FFFF00;
+    }
+    
+    .construction {
+      text-align: center;
+      margin: 10px 0;
+    }
+    
+    .guestbook {
+      margin-top: 20px;
+      border: 2px solid #FF0000;
+      padding: 10px;
+      background-color: #EEEEEE;
+    }
+    
+    .guestbook h3 {
+      color: #0000FF;
+      text-align: center;
+    }
+    
+    .guestbook-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .guestbook-form input, 
+    .guestbook-form textarea {
+      margin-bottom: 5px;
+      border: 1px solid #000000;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      padding: 3px;
+    }
+    
+    .guestbook-form button {
+      background-color: #00FF00;
+      border: 2px outset #CCCCCC;
+      padding: 3px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>Me, Myself, and My Creations</h1>
+      <marquee scrollamount="3" behavior="alternate">A most warm and cordial welcome to my website. Delighted to have you here.• Best viewed in 800x600 resolution</marquee>
+    </div>
+    
+    <div id="navbar">
+      <button class="navbutton" onclick="changeTab('home')">HOME</button>
+      <button class="navbutton" onclick="changeTab('projects')">PROJECTS</button>
+      <button class="navbutton" onclick="changeTab('about')">ABOUT ME</button>
+      <button class="navbutton" onclick="changeTab('contact')">CONTACT</button>
+    </div>
+    
+    <div id="content">
+      <div id="sidebar">
+   
+        
+        <h3>My Skills</h3>
+        <ul>
+          <li>MATLAB</li>
+          <li>AUTOCAD</li>
+          <li>Davinci Resolve</li>
+       
+        </ul>
+        
+        <div class="construction">
+          <div class="blink">There is no rule book.</div>
+        </div>
+        
+
+      </div>
+      
+      <div id="main">
+        <div id="home-tab" class="section">
+          <h2>Welcome to My Website!</h2>
+          
+          <p>Hello and welcome to my personal portfolio website! This site was created to showcase my skills and projects. Feel free to explore and learn more about me and my work.</p>
+          <p>I'm someone who loves learning by doing—whether it's coding in MATLAB or digging into physics and math concepts. I like keeping things simple and clear, and I enjoy figuring out how things work behind the scenes. I'm especially interested in using what I learn to build practical solutions, especially in medical devices and renewable energy.</p>
+          <p class="blink" style="color: #FF0000; font-weight: bold; text-align: center;">The gentleman entrusted with this project possesses a rather relaxed approach to deadlines.</p>
+        </div>
+        
+        <div id="projects-tab" class="section" style="display: none;">
+          <h2>My Projects</h2>
+          
+          <div class="project">
+            <div class="project-image">>
+            <img src="images/sushruta.jpg" alt="Sushruta Chatbot" style="width:100%; height:auto;" />
+            </div>
+            <div>
+              <h3>Sushruta Reincarnation</h3>
+              <p>I made a chatbot in which i inputed the work and biography of sushruta. You can talk to him. </p>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project-image">
+                <img src="images/water.png" alt="Solar powered Water condenser" style="width:100%; height:auto;" />
+                </div>
+            <div>
+              <h3>Solar powered Water condenser</h3>
+              <p>I made a autocad proto-type of a Solar powered Water condenser for my MOU Ideathon.</p>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project-image">PROJECT 3</div>
+            <div>
+              <h3>Continuous Glucose Monitoring (CGM)</h3>
+              <p>I created a detailed AutoCAD model of a Continuous Glucose Monitoring (CGM) machine. The model includes key components like the sensor, transmitter, and receiver/display unit. The sensor is designed to be placed under the skin for real-time glucose measurement, while the transmitter sends data wirelessly to the display unit. The design focuses on compactness, ease of use, and clarity of component layout—ideal for understanding the structure and functionality of a CGM system.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div id="about-tab" class="section" style="display: none;">
+          <h2>About Me</h2>
+          <img src="images/manas.jpeg" alt="My Photo" style="float: left; width: 150px; height: auto; border: 2px solid #000000; margin-right: 10px;">
+
+          <p>I'm someone who loves learning by building and exploring. I dive deep into physics, math, and programming, and I usually understand things best when I break them down and try them out for myself — whether it's MATLAB simulations, circuit design, or coding up physical models. I’m especially passionate about applying my skills in areas like medical devices and renewable energy.
+
+            I built a real-life chatbot named Susruta to explore how AI can be used in healthcare. I also designed a full AutoCAD prototype of a Continuous Glucose Monitoring (CGM) machine, showing the inner workings in a compact and functional layout for real-world use. On the renewable side, I created an AutoCAD prototype of a solar-powered water condenser, designed to extract clean water from air using solar energy.
+            
+            I enjoy using MATLAB because it connects my love for coding and physics, letting me visualize and interact with scientific concepts more intuitively. At the core, I’m just super curious and love making things that solve problems — whether it’s improving health, capturing water from air, or just understanding the science a little better every day.</p>
+          <p>I will graduate from FR.CRCE with a degree in Computer Engineering in 2028.</p>
+          <p></p>
+          
+          <div style="clear: both;"></div>
+          
+        
+        </div>
+        
+        <div id="contact-tab" class="section" style="display: none;">
+          <h2>Contact Me</h2>
+          <p>Feel free to reach out to me using the information below:</p>
+          <p><strong>Email:</strong> manaskedia1221@gmail.com</p>
+          <p><strong>Phone:</strong>7045556313</p>
+          
+          <div class="guestbook">
+            <h3>Sign My Guestbook!</h3>
+            <form class="guestbook-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name">
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email">
+              
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+              
+              <button type="button" onclick="submitGuestbook()">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+      <p> “Most opportunities are created by luck. It takes skill to grasp those opportunities and turn it into success.” — Technoblade
+
+      </p>  
+      <p>© 2025 My Portfolio | Best viewed in Internet Explorer 6.0 or Netscape Navigator</p>
+      <p>
+        <a href="#">Home</a> | 
+        <a href="#">Projects</a> | 
+        <a href="#">About</a> | 
+        <a href="#">Contact</a>
+      </p>
+    
+    </div>
+  </div>
+  
+  <script>
+    function changeTab(tabName) {
+      // Hide all tabs
+      document.getElementById('home-tab').style.display = 'none';
+      document.getElementById('projects-tab').style.display = 'none';
+      document.getElementById('about-tab').style.display = 'none';
+      document.getElementById('contact-tab').style.display = 'none';
+      
+      // Show the selected tab
+      document.getElementById(tabName + '-tab').style.display = 'block';
+    }
+    
+    function submitGuestbook() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      if (name && email && message) {
+        alert('Thanks for signing my guestbook, ' + name + '! Your message has been received.');
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      } else {
+        alert('Please fill in all fields!');
+      }
+    }
+    
+    // Increment visitor counter randomly
+    setInterval(function() {
+      const counter = document.getElementById('visitor-counter');
+      let count = parseInt(counter.innerText);
+      if (Math.random() > 0.7) {
+        count++;
+        counter.innerText = count.toString().padStart(8, '0');
+      }
+    }, 10000);
+    
+    // Create blinking text effect for older browsers
+    if (!document.styleSheets || !document.styleSheets[0]) {
+      setInterval(function() {
+        const elements = document.getElementsByClassName('blink');
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.visibility = elements[i].style.visibility === 'hidden' ? 'visible' : 'hidden';
+        }
+      }, 500);
+    }
+  </script>
+</body>
+</html>
